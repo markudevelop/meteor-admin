@@ -1,0 +1,15 @@
+{
+  "name": "seekable-admin",
+  "private": true,
+  "scripts": {
+    "start": "meteor run --port 3005"
+  },
+  "dependencies": {
+    "meteor-node-stubs": "~0.2.0",
+    "moment": "^2.14.1",
+    "react": "^15.2.1",
+    "react-addons-pure-render-mixin": "^15.1.0",
+    "react-dom": "^15.2.1",
+    "react-mounter": "^1.2.0"
+  }
+}
