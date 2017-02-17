@@ -9,6 +9,22 @@ const checkAdminAccess = (userId) => {
   }
 };
 
+export const allDocumentsDelete = new ValidatedMethod({
+  name: 'all.documents.delete',
+  validate(){},
+  run({ collectionName }) {
+    checkAdminAccess(this.userId);
+
+    const collection = Mongo.Collection.get(collectionName);
+
+    if (collection) {
+      return collection.remove({});
+    } else {
+      throw new Meteor.Error('not-exists', 'We couldnt find the collection');
+    }
+  },
+});
+
 export const documentDelete = new ValidatedMethod({
   name: 'documents.delete',
   validate(){},
@@ -48,7 +64,7 @@ export const documentNew = new ValidatedMethod({
   validate(){},
   run({ collectionName, doc }) {
     checkAdminAccess(this.userId);
-    
+
     const collection = Mongo.Collection.get(collectionName);
 
     if (collection) {

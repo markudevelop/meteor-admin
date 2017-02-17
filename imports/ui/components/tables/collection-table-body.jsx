@@ -6,7 +6,8 @@ const parseValue = docValue => {
   }
 
   if (Array.isArray(docValue)) {
-    docValue.join(','); // not checking if we have nested objects
+    // docValue.join(','); // not checking if we have nested objects
+    docValue = 'Array';
   }
 
   if (!Array.isArray(docValue) && typeof docValue === 'object') {

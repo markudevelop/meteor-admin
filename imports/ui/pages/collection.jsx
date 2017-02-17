@@ -9,7 +9,9 @@ class Collection extends React.Component {
     setSchemaFromDoc();
     $('#addDocumentModal').openModal();
   }
-
+  openDeleteModal() {
+    $('#deleteAllDocumentsModal').openModal();
+  }
   render () {
     let { collectionName, documents, isLoading, count, page } = this.props;
     return (
@@ -20,8 +22,18 @@ class Collection extends React.Component {
             <h5>{collectionName} ({count})</h5>
           </div>
           <div className="grid-example col s12 m6 align-right">
-            <a onClick={this.openModal}
-              className="waves-effect waves-light green right btn">Add New</a>
+            <a
+              onClick={this.openModal}
+              className="waves-effect waves-light green right btn"
+              style={{marginRight: 10}}>
+              Add New
+            </a>
+            <a
+              onClick={this.openDeleteModal}
+              className="waves-effect waves-light red right btn"
+              style={{marginRight: 10}}>
+              Delete All
+            </a>
           </div>
         </div>
         { !isLoading ?

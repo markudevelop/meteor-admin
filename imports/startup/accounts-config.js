@@ -15,7 +15,7 @@ AccountsTemplates.configure({
   hideSignUpLink: true,
   texts: {
     title: {
-      signIn: "Seekable Admin Login",
+      signIn: "Admin Login",
     }
   },
 });
